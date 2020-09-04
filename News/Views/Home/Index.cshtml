@@ -1,0 +1,805 @@
+﻿@using News.Controllers
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var news = ViewBag.news;
+    var tags = ViewBag.tags;
+    var categories = ViewBag.categories;
+    var popularNews = ViewBag.popularNews;
+    var google = ViewBag.google as IEnumerable<dynamic>;
+    var microsoft = ViewBag.microsoft as IEnumerable<dynamic>;
+    var apple = ViewBag.apple as IEnumerable<dynamic>;
+
+    var sliderNews = ViewBag.sliderNews as List<dynamic>;
+
+    var googlefirstitem = google.First();
+
+    var microsoftfirtsitem = microsoft.First();
+
+    var applefirtsitem = apple.First();
+
+}
+    
+<!-- Headline -->
+<div class="container">
+    <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+        <div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+            <span class="text-uppercase cl2 p-r-8">
+                Güncel Haberler :
+            </span>
+
+            <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+                @foreach (var item in news)
+                {
+                    <span class="dis-inline-block slide100-txt-item animated visible-false">
+                        @item.TITLE
+                    </span>
+                }
+            </span>
+        </div>
+
+        <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+            <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
+            <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+                <i class="zmdi zmdi-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Top Slider -->
+<section class="bg0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 slider-headline">
+                <div id="web-swiper" class="swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-460px, 0px, 0px);">
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="9" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[10].TITLE">
+                                    <div class="v-image"><figure style="position: relative;">
+                                        <div style="padding-top: 56.27%;"></div>
+                                        <picture data-iesrc="~/images/@sliderNews[10].SMALLIMAGE" data-alt="@sliderNews[10].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="@sliderNews[10].SMALLIMAGE">
+                                       </picture></figure></div>
+                                    <h2>@sliderNews[10].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[10].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[10].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[0].TITLE">
+                                    <div class="v-image"><figure style="position: relative;">
+                                        <div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[0].SMALLIMAGE" data-alt="@sliderNews[0].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[0].SMALLIMAGE">
+                                        <!----><img alt="@sliderNews[0].TITLE"></picture>
+                                         </figure></div> <h2>@sliderNews[0].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[0].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[0].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[1].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[1].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[1].SMALLIMAGE">
+                                        <img alt="@sliderNews[1].TITLE"></picture></figure></div>
+                                    <h2>@sliderNews[1].TITLE</h2>
+                                </a>
+                                <a href="" title=@sliderNews[1].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[1].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="2" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[2].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[2].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[2].SMALLIMAGE">
+                                        <img alt="@sliderNews[2].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[2].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[2].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[2].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="3" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[3].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[3].SMALLIMAGE" data-alt="@sliderNews[3].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[3].SMALLIMAGE">
+                                        <img alt="@sliderNews[3].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[3].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[3].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[3].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="4" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[4].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[4].SMALLIMAGE" data-alt="@sliderNews[4].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[4].SMALLIMAGE">
+                                        <img alt="@sliderNews[4].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[4].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[4].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[4].NAME_</h5>
+                                </a>
+                            </article>
+                        </div> 
+                        <div class="swiper-slide" data-swiper-slide-index="5" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[5].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[5].SMALLIMAGE" data-alt="@sliderNews[5].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[5].SMALLIMAGE">
+                                        <img alt="@sliderNews[5].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[5].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[5].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[5].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="6" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[6].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[6].SMALLIMAGE" data-alt="@sliderNews[6].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[6].SMALLIMAGE">
+                                        <img alt="@sliderNews[6].TITLE"></picture></figure></div>
+                                    <h2>@sliderNews[6].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[6].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[6].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="7" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[7].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[7].SMALLIMAGE" data-alt="@sliderNews[7].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[7].SMALLIMAGE"> 
+                                        <img alt="@sliderNews[7].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[7].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[7].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[7].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="8" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[8].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[8].SMALLIMAGE" data-alt="@sliderNews[8].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[8].SMALLIMAGE">
+                                        <img alt="@sliderNews[8].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[8].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[8].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[8].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="9" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[9].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[9].SMALLIMAGE" data-alt="@sliderNews[9].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[9].SMALLIMAGE">
+                                        <img alt="@sliderNews[9].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[9].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[9].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[9].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 460px;">
+                            <article class="box-2">
+                                <a href="" title="@sliderNews[11].TITLE">
+                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
+                                        <picture data-iesrc="~/images/@sliderNews[11].SMALLIMAGE" data-alt="@sliderNews[11].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[11].SMALLIMAGE">
+                                        <img alt="@sliderNews[11].TITLE"></picture></figure></div> 
+                                    <h2>@sliderNews[11].TITLE</h2>
+                                </a>
+                                <a href="" title="@sliderNews[11].TITLE" class="category">
+                                    <h5 class="badge badge-warning">@sliderNews[11].NAME_</h5>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-bullets"><a href="https://www.teknolojioku.com/donanim/mediatek-huaweiye-islemci-satmak-icin-abdden-izin-istedi-5f4a9f6f5a098f4dc11f1370" class="num"><span class="swiper-pagination-bullet swiper-pagination-bullet-active">1</span></a><a href="https://www.teknolojioku.com/egitim/okullar-21-eylulde-acilacak-mi-milli-egitim-bakani-acikladi-5f4b680cee270c5144173f46" class="num"><span class="swiper-pagination-bullet">2</span></a><a href="https://www.teknolojioku.com/mobil/harmonyos-kullanan-ilk-telefon-ne-zaman-gelecek-huawei-acikladi-5f4b5af713a98f66bc2abb0f" class="num"><span class="swiper-pagination-bullet">3</span></a><a href="https://www.teknolojioku.com/mobil/uygun-fiyatli-nokia-34-ozellikleri-sizdirildi-5f4b492002bbd900c9005939" class="num"><span class="swiper-pagination-bullet">4</span></a><a href="https://www.teknolojioku.com/otomobil/son-zamlarin-ardindan-2020-volkswagen-tiguan-fiyat-listesi-5f4b3e8cff872c72b214c4ea" class="num"><span class="swiper-pagination-bullet">5</span></a><a href="https://www.teknolojioku.com/otomobil/sifir-otomobile-otv-indirimi-beklerken-otv-zammi-geldi-5f4b33dfee270c5144173f3a" class="num"><span class="swiper-pagination-bullet">6</span></a><a href="https://www.teknolojioku.com/bilim-teknik/issde-yasayacak-ilk-siyahi-kadin-olacak-5f4a950b38312239a52e17de" class="num"><span class="swiper-pagination-bullet">7</span></a><a href="https://www.teknolojioku.com/sinema/netflixte-yer-alan-en-iyi-bilim-kurgu-filmleri-agustos-2020-5f494778b880087adb6c78a0" class="num"><span class="swiper-pagination-bullet">8</span></a><a href="https://www.teknolojioku.com/mobil/en-ucuz-samsung-modelleri-agustos-2020-5f4957da9b20d976a5612cdb" class="num"><span class="swiper-pagination-bullet">9</span></a><a href="https://www.teknolojioku.com/mobil/oppo-uzayabilen-ekrana-sahip-telefon-uzerinde-calisiyor-5f497be4ff872c72b214c4d6" class="num"><span class="swiper-pagination-bullet">10</span></a></div>
+                </div>
+                <ins class="prev"><i class="icon-navigate_before"></i></ins>
+                <ins class="next"><i class="icon-navigate_next"></i></ins>
+            </div>
+            <div class="col-md-4">
+                <div class="item d-flex d-sm-none justify-content-center" style="height: 275px;">
+                    <div style="width: 300px; height: 250px;">
+                        <div class="adpro desktop-ad" data-page="84" data-region="243" data-category="-1" data-lazy="true"></div>
+                    </div>
+                </div>
+                <div class="sub-headline">
+                    <article class="box-2">
+                        <a href="https://www.teknolojioku.com/mobil/sony-xperia-5-ii-icin-detaylar-gelmeye-basladi-5f496c77dccec8201569652c" title="Sony Xperia 5 II için detaylar gelmeye başladı!">
+                            <div class="v-image"><figure style="position: relative;"><div style="padding-top: 59.95%;"></div> <picture data-iesrc="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg" data-alt="Sony Xperia 5 II için detaylar gelmeye başladı!" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"><source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg.webp" type="image/webp"> <source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg"> <!----><img alt="Sony Xperia 5 II için detaylar gelmeye başladı!"></picture></figure></div> <h2>Sony Xperia 5 II için detaylar gelmeye başladı!</h2>
+                        </a>
+                        <a href="https://www.teknolojioku.com/mobil" title="Mobil" class="category">
+                            <h5 class="badge badge-warning">Mobil</h5>
+                        </a>
+                    </article>
+                    <article class="box-2">
+                        <a href="https://www.teknolojioku.com/otomobil/skoda-scala-turkiyede-satisa-sunuldu-iste-fiyati-ve-ozellikleri-5f4966111136eb0a62520df1" title="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;">
+                            <div class="v-image"><figure style="position: relative;"><div style="padding-top: 59.95%;"></div> <picture data-iesrc="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg" data-alt="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"><source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg.webp" type="image/webp"> <source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg"> <!----><img alt="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;"></picture></figure></div> <h2>Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;</h2>
+                        </a>
+                        <a href="https://www.teknolojioku.com/otomobil" title="Otomobil" class="category">
+                            <h5 class="badge badge-warning">Otomobil</h5>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Post -->
+<section class="bg0 p-t-70">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="p-b-20">
+                    <!-- Google -->
+                    <div class="tab01 p-b-20">
+                        <div class="tab01-head how2 how2-cl1 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+                            <!-- Brand tab -->
+                            <h3 class="f1-m-2 cl12 tab01-title">
+                                Google
+                            </h3>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                            </ul>
+
+                            <!--  -->
+                            <a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+                                Hepsini Göster
+                                <i class="fs-12 m-l-5 fa fa-caret-right"></i>
+                            </a>
+                        </div>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content p-t-35">
+                            <!-- - -->
+                            <div class="tab-pane fade show active" id="tab2-1" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        
+                                        @{string strUrl = "haberler/" + googlefirstitem.CategoryName + "/" + RootController.ToUrl((string)googlefirstitem.TITLE)+"/"+ googlefirstitem.ID; }
+                                        <div class="m-b-30">
+                                            <a href="@strUrl" class="wrap-pic-w hov1 trans-03">
+                                                <img src="~/images/@googlefirstitem.SMALLIMAGE" alt="IMG">
+                                            </a>
+
+                                            <div class="p-t-20">
+                                                <h5 class="p-b-5">
+                                                    <a href="@strUrl" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                                        @googlefirstitem.TITLE
+                                                    </a>
+                                                </h5>
+
+                                                <span class="cl8">
+                                                    <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                                        @googlefirstitem.NAME_
+                                                    </a>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        @googlefirstitem.AUTHOR
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3">
+                                                        @googlefirstitem.CREATEDATE
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        @foreach (var item in google)
+                                        {
+                                            if (google.First() == item)
+                                            {
+                                                continue;
+                                            }
+                                            <div class="flex-wr-sb-s m-b-30">
+                                                <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                                </a>
+
+                                                <div class="size-w-2">
+                                                    <h5 class="p-b-5">
+                                                        <a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                            @item.TITLE
+                                                        </a>
+                                                    </h5>
+
+                                                    <span class="cl8">
+                                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                            @item.NAME_
+                                                        </a>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            @item.AUTHOR
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3">
+                                                            @item.CREATEDATE
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Microsoft -->
+                    <div class="tab01 p-b-20">
+                        <div class="tab01-head how2 how2-cl2 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+                            <!-- Brand tab -->
+                            <h3 class="f1-m-2 cl13 tab01-title">
+                                Microsoft
+                            </h3>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                            </ul>
+
+                            <!--  -->
+                            <a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+                                Hepsini Göster
+                                <i class="fs-12 m-l-5 fa fa-caret-right"></i>
+                            </a>
+                        </div>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content p-t-35">
+                            <!-- - -->
+                            <div class="tab-pane fade show active" id="tab2-1" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        <div class="m-b-30">
+                                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                                                <img src="~/images/@microsoftfirtsitem.SMALLIMAGE" alt="IMG">
+                                            </a>
+
+                                            <div class="p-t-20">
+                                                <h5 class="p-b-5">
+                                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                                        @microsoftfirtsitem.TITLE
+                                                    </a>
+                                                </h5>
+
+                                                <span class="cl8">
+                                                    <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                                        @microsoftfirtsitem.NAME_
+                                                    </a>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        @microsoftfirtsitem.AUTHOR
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3">
+                                                        @microsoftfirtsitem.CREATEDATE
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        @foreach (var item in microsoft)
+                                        {
+                                            if (microsoft.First() == item)
+                                            {
+                                                continue;
+                                            }
+                                            <div class="flex-wr-sb-s m-b-30">
+                                                <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                                </a>
+
+                                                <div class="size-w-2">
+                                                    <h5 class="p-b-5">
+                                                        <a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                            @item.TITLE
+                                                        </a>
+                                                    </h5>
+
+                                                    <span class="cl8">
+                                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                            @item.NAME_
+                                                        </a>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            @item.AUTHOR
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3">
+                                                            @item.CREATEDATE
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apple -->
+                    <div class="tab01 p-b-20">
+                        <div class="tab01-head how2 how2-cl3 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+                            <!-- Brand tab -->
+                            <h3 class="f1-m-2 cl14 tab01-title">
+                                Apple
+                            </h3>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+
+                                </li>
+                            </ul>
+
+                            <!--  -->
+                            <a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+                                Hepsini Göster
+                                <i class="fs-12 m-l-5 fa fa-caret-right"></i>
+                            </a>
+                        </div>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content p-t-35">
+                            <!-- - -->
+                            <div class="tab-pane fade show active" id="tab3-1" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        <div class="m-b-30">
+                                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                                                <img src="~/images/@applefirtsitem.SMALLIMAGE" alt="IMG">
+                                            </a>
+
+                                            <div class="p-t-20">
+                                                <h5 class="p-b-5">
+                                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                                        @applefirtsitem.TITLE
+                                                    </a>
+                                                </h5>
+
+                                                <span class="cl8">
+                                                    <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                                        @applefirtsitem.NAME_
+                                                    </a>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        @applefirtsitem.AUTHOR
+                                                    </span>
+
+                                                    <span class="f1-s-3 m-rl-3">
+                                                        -
+                                                    </span>
+
+                                                    <span class="f1-s-3">
+                                                        @applefirtsitem.CREATEDATE
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                        <!-- Item post -->
+                                        @foreach (var item in apple)
+                                        {
+                                            if (apple.First() == item)
+                                            {
+                                                continue;
+                                            }
+
+                                            <div class="flex-wr-sb-s m-b-30">
+                                                <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                                </a>
+
+                                                <div class="size-w-2">
+                                                    <h5 class="p-b-5">
+                                                        <a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                            @item.TITLE
+                                                        </a>
+                                                    </h5>
+
+                                                    <span class="cl8">
+                                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                            @item.NAME_
+                                                        </a>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            @item.AUTHOR
+                                                        </span>
+
+                                                        <span class="f1-s-3 m-rl-3">
+                                                            -
+                                                        </span>
+
+                                                        <span class="f1-s-3">
+                                                            @item.CREATEDATE
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-lg-4">
+                <div class="p-l-10 p-rl-0-sr991 p-b-20">
+                    <!--  -->
+                    <div>
+                        <div class="how2 how2-cl4 flex-s-c">
+                            <h3 class="f1-m-2 cl3 tab01-title">
+                                Popüler Haberler
+                            </h3>
+                        </div>
+                        <ul class="p-t-35">
+                            @{int i = 1;
+
+                                foreach (var item in popularNews)
+                                {
+                                    <li class="flex-wr-sb-s p-b-22">
+                                        <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                            @i
+                                        </div>
+                                        <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                                            @item.TITLE
+                                        </a>
+                                    </li>
+
+                                    i++;
+                                }
+                            }
+                        </ul>
+                    </div>
+
+                    <!--  -->
+                    <div class="flex-c-s p-t-8">
+                        <a href="#">
+                            <img class="max-w-full" src="~/images/banner-02.jpg" alt="IMG" />
+                        </a>
+                    </div>
+
+                    <!--  -->
+                    <div class="p-t-50">
+                        <div class="how2 how2-cl4 flex-s-c">
+                            <h3 class="f1-m-2 cl3 tab01-title">
+                                Takipte Kal
+                            </h3>
+                        </div>
+
+                        <ul class="p-t-35">
+                            <li class="flex-wr-sb-c p-b-20">
+                                <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-facebook fs-16 cl0 hov-cl0">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+
+                                <div class="size-w-3 flex-wr-sb-c">
+                                    <span class="f1-s-8 cl3 p-r-20">
+                                        6879 Hayran
+                                    </span>
+
+                                    <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+                                        Beğen
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="flex-wr-sb-c p-b-20">
+                                <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+
+                                <div class="size-w-3 flex-wr-sb-c">
+                                    <span class="f1-s-8 cl3 p-r-20">
+                                        568 Takipçi
+                                    </span>
+
+                                    <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+                                        Takİp Et
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="flex-wr-sb-c p-b-20">
+                                <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-youtube fs-16 cl0 hov-cl0">
+                                    <span class="fab fa-youtube"></span>
+                                </a>
+
+                                <div class="size-w-3 flex-wr-sb-c">
+                                    <span class="f1-s-8 cl3 p-r-20">
+                                        5039 Abone
+                                    </span>
+
+                                    <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+                                        Abone Ol
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner -->
+<div class="container">
+    <div class="flex-c-c">
+        <a href="#">
+            <img class="max-w-full" src="~/images/banner-01.jpg" alt="IMG" />
+        </a>
+    </div>
+</div>
+
+<!-- Latest -->
+<section class="bg0 p-t-60 p-b-35">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 p-b-20">
+                <div class="how2 how2-cl4 flex-s-c m-r-10 m-r-0-sr991">
+                    <h3 class="f1-m-2 cl3 tab01-title">
+                        En Son Haberler
+                    </h3>
+                </div>
+
+                <div class="row p-t-35">
+                    @foreach (var item in news)
+                    {
+                        <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                            <!-- Item latest -->
+                            <div class="m-b-45">
+                                <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                </a>
+
+                                <div class="p-t-16">
+                                    <h5 class="p-b-5">
+                                        <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                            @item.TITLE
+                                        </a>
+                                    </h5>
+
+                                    <span class="cl8">
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            @item.AUTHOR
+                                        </a>
+
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
+
+                                        <span class="f1-s-3">
+                                            @item.CREATEDATE
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-10 col-lg-4">
+                <div class="p-l-10 p-rl-0-sr991 p-b-20">
+                    <!-- Tag -->
+                    <div class="p-b-55">
+                        <div class="how2 how2-cl4 flex-s-c m-b-30">
+                            <h3 class="f1-m-2 cl3 tab01-title">
+                                Etiketler
+                            </h3>
+                        </div>
+
+                        <div class="flex-wr-s-s m-rl--5">
+                            @foreach (var tag in tags)
+                            {
+                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+                                    @tag.NAME_
+                                </a>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
