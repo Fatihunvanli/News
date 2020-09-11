@@ -26,17 +26,29 @@ namespace News.Controllers
                 "inner join CATEGORIES c on c.ID = n.CATEGORYID " +
                 "WHERE CATEGORYID = 1 ORDER BY CREATEDATE DESC").ToList();
 
-            var microsoft = db.Query("SELECT TOP 4 n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE,t.NAME_ " +
-                "FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS t on nt.TAGSID = t.ID WHERE CATEGORYID = 2 " +
-                "ORDER BY CREATEDATE DESC").ToList();
+            var microsoft = db.Query("SELECT TOP 4 n.ID,n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE,t.NAME_, c.NAME_ CategoryName " +
+                "FROM NEWS n " +
+                "inner join NEWSIMAGES ni on n.ID = ni.NEWSID " +
+                "inner join NEWSTAGS nt on n.ID = nt.NEWSID " +
+                "inner join TAGS t on nt.TAGSID = t.ID " +
+                "inner join CATEGORIES c on c.ID = n.CATEGORYID " +
+                "WHERE CATEGORYID = 2 ORDER BY CREATEDATE DESC").ToList();
 
-            var apple = db.Query("SELECT TOP 4 n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE,t.NAME_ " +
-                "FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS t on nt.TAGSID = t.ID WHERE CATEGORYID = 3 " +
-                "ORDER BY CREATEDATE DESC").ToList();
+            var apple = db.Query("SELECT TOP 4 n.ID,n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE,t.NAME_, c.NAME_ CategoryName " +
+                "FROM NEWS n " +
+                "inner join NEWSIMAGES ni on n.ID = ni.NEWSID " +
+                "inner join NEWSTAGS nt on n.ID = nt.NEWSID " +
+                "inner join TAGS t on nt.TAGSID = t.ID " +
+                "inner join CATEGORIES c on c.ID = n.CATEGORYID " +
+                "WHERE CATEGORYID = 3 ORDER BY CREATEDATE DESC").ToList();
 
-            var news = db.Query("SELECT TOP 12 n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.NAME_ " +
-                "FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS nf on nt.TAGSID = nf.ID " +
-                "ORDER BY CREATEDATE DESC").ToList();
+            var news = db.Query("SELECT TOP 12 n.ID,n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.NAME_ , c.NAME_ CategoryName " +
+                "FROM NEWS n " +
+                "inner join NEWSIMAGES ni on n.ID = ni.NEWSID " +
+                "inner join NEWSTAGS nt on n.ID = nt.NEWSID " +
+                "inner join TAGS nf on nt.TAGSID = nf.ID " +
+                "inner join CATEGORIES c on c.ID = n.CATEGORYID " +
+                "ORDER BY n.CREATEDATE DESC").ToList();
 
 
 
@@ -65,13 +77,13 @@ namespace News.Controllers
 
             if (newsid == string.Empty || newsid == null)
             {
-               return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             var categories = db.Query("Select c.NAME_ from CATEGORIES c inner join NEWS n on c.ID = n.CATEGORYID group by c.NAME_");
             var tags = db.Query("select NAME_ from TAGS ");
 
-            var news = db.Query("SELECT n.ID,n.TITLE,n.CONTENT_,c.NAME_ as CATEGORYNAME,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.NAME_ FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS nf on nt.TAGSID = nf.ID inner join CATEGORIES c on c.ID = n.CATEGORYID where n.ID = '"+newsid+"' ").FirstOrDefault();
+            var news = db.Query("SELECT n.ID,n.TITLE,n.CONTENT_,c.NAME_ as CATEGORYNAME,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.NAME_ FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS nf on nt.TAGSID = nf.ID inner join CATEGORIES c on c.ID = n.CATEGORYID where n.ID = '" + newsid + "' ").FirstOrDefault();
 
             var popularNews = db.Query("SELECT TOP 3 n.TITLE,Convert(varchar,n.CREATEDATE,103) CREATEDATE,ni.SMALLIMAGE SMALLIMAGE,c.NAME_ FROM NEWS n " +
                 "inner join NEWSIMAGES ni on ni.NEWSID = n.ID inner join CATEGORIES c on n.CATEGORYID = c.ID order by VIEWS_ desc");
@@ -80,6 +92,36 @@ namespace News.Controllers
             ViewBag.popularNews = popularNews;
             ViewBag.categories = categories;
             ViewBag.news = news;
+            ViewBag.tags = tags;
+
+            return View();
+        }
+
+
+        public ActionResult NewsCategoryList()
+        {
+            var categoryname = RouteData.Values["categoryname"];
+
+            if (categoryname == string.Empty || categoryname == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var categories = db.Query("SELECT n.ID,n.TITLE,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE, n.READTIME, n.VIEWS_, ni.SMALLIMAGE, t.NAME_, c.NAME_ categoryname " +
+                "FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID " +
+                "inner join NEWSTAGS nt on n.ID = nt.NEWSID " +
+                "inner join TAGS t on nt.TAGSID = t.ID " +
+                "inner join CATEGORIES c on c.ID = n.CATEGORYID " +
+                "WHERE c.NAME_ ='" + categoryname + "'  ORDER BY CREATEDATE DESC").ToList();
+
+            var popularNews = db.Query("SELECT TOP 5 n.TITLE,Convert(varchar,n.CREATEDATE,103) CREATEDATE,ni.SMALLIMAGE SMALLIMAGE,c.NAME_ FROM NEWS n " +
+                "inner join NEWSIMAGES ni on ni.NEWSID = n.ID inner join CATEGORIES c on n.CATEGORYID = c.ID order by VIEWS_ desc");
+
+            var tags = db.Query("select NAME_ from TAGS ");
+
+            ViewBag.categories = categories;
+            ViewBag.categoryName = categoryname;
+            ViewBag.popularNews = popularNews;
             ViewBag.tags = tags;
 
             return View();
