@@ -2,6 +2,8 @@
 @{
     var categoriesCount = ViewBag.categoriesCount;
 }
+@* fatih *@
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -230,7 +232,7 @@
             <div class="wrap-logo container">
                 <!-- Logo desktop -->
                 <div class="logo">
-                    <a href="/Home/Index">
+                    <a href="@Url.Action("Index", "Home")">
                         <img src="~/images/logo-01.png" alt="LOGO" />
                     </a>
                 </div>
