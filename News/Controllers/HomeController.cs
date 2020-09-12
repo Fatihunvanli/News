@@ -13,7 +13,7 @@ namespace News.Controllers
         public ActionResult Index()
         {
             //Eğer sitede yavaşlık olursa tüm haberleri newsten çek burada linq sorgusu at.
-            //var news = db.Query("select * from NEWS");
+            //var news = db.Query("select * from NEWS"); 
 
             var tags = db.Query("select NAME_ from TAGS ");
 
