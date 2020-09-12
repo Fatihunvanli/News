@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace News.Controllers
 {
-    public class PartialsController : Help
+    public class PartialsController : Help   
     {
         // GET: Partials
         public ActionResult Index()
