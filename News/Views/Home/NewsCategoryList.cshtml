@@ -233,11 +233,12 @@
 
                                 foreach (var item in popularNews)
                                 {
+                                    string strUrl = item.categoryname + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
                                     <li class="flex-wr-sb-s p-b-22">
                                         <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
                                             @i
                                         </div>
-                                        <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                                        <a href="@strUrl" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                                             @item.TITLE
                                         </a>
                                     </li>
