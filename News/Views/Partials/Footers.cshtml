@@ -61,23 +61,23 @@
                         @foreach (var item in popularNews)
                         {
                              string strUrl = "haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
-                            <li class="flex-wr-sb-s p-b-20">
-                                <a href="@strUrl" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
-                                </a>
+                        <li class="flex-wr-sb-s p-b-20">
+                            <a href='@strUrl' class="size-w-4 wrap-pic-w hov1 trans-03">
+                                <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                            </a>
 
-                                <div class="size-w-5">
-                                    <h6 class="p-b-5">
-                                        <a href="@strUrl" class="f1-s-5 cl11 hov-cl10 trans-03">
-                                            @item.TITLE
-                                        </a>
-                                    </h6>
+                            <div class="size-w-5">
+                                <h6 class="p-b-5">
+                                    <a href='@strUrl' class="f1-s-5 cl11 hov-cl10 trans-03">
+                                        @item.TITLE
+                                    </a>
+                                </h6>
 
-                                    <span class="f1-s-3 cl6">
-                                        @item.CREATEDATE
-                                    </span>
-                                </div>
-                            </li>
+                                <span class="f1-s-3 cl6">
+                                    @item.CREATEDATE
+                                </span>
+                            </div>
+                        </li>
                         }
                     </ul>
                 </div>
@@ -92,9 +92,9 @@
                     <ul class="m-t--12">
                         @foreach (var item in categoriesCount)
                         {
-                            string strUrl = "haberler/" + RootController.ToUrl((string)item.CategoryName);
+                            string strUrl = "/haberler/" + RootController.ToUrl((string)item.CategoryName);
                             <li class="how-bor1 p-rl-5 p-tb-10">
-                                <a href="@strUrl" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                                <a href='@strUrl' class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                     @item.CategoryName  (@item.CATEGORYCOUNT)
                                 </a>
                             </li>

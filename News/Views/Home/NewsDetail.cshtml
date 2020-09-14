@@ -1,4 +1,5 @@
-﻿@using System.Linq
+﻿@using News.Controllers
+@using System.Linq
 @{
     ViewBag.Title = "NewsDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -165,13 +166,13 @@
                         <ul class="p-t-35">
                             @foreach (var item in categories)
                             {
-                            <li class="how-bor3 p-rl-4">
-                                <a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-                                    @item.NAME_
-                                </a>
-                            </li>
+                                <li class="how-bor3 p-rl-4">
+                                    <a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+                                        @item.NAME_
+                                    </a>
+                                </li>
                             }
-                            
+
                         </ul>
                     </div>
 
@@ -209,36 +210,36 @@
                         </div>
 
                         <ul class="p-t-35">
-                            
+
                             @foreach (var item in popularNews)
                             {
-                            <li class="flex-wr-sb-s p-b-30">
-                                <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
-                                    <img src="~/images/@item.SMALLIMAGE" alt="IMG">
-                                </a>
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                    </a>
 
-                                <div class="size-w-11">
-                                    <h6 class="p-b-4">
-                                        <a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                            @item.TITLE
-                                        </a>
-                                    </h6>
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                @item.TITLE
+                                            </a>
+                                        </h6>
 
-                                    <span class="cl8 txt-center p-b-24">
-                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-                                            @item.NAME_
-                                        </a>
+                                        <span class="cl8 txt-center p-b-24">
+                                            <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                @item.NAME_
+                                            </a>
 
-                                        <span class="f1-s-3 m-rl-3">
-                                            -
+                                            <span class="f1-s-3 m-rl-3">
+                                                -
+                                            </span>
+
+                                            <span class="f1-s-3">
+                                                @item.CREATEDATE
+                                            </span>
                                         </span>
-
-                                        <span class="f1-s-3">
-                                            @item.CREATEDATE
-                                        </span>
-                                    </span>
-                                </div>
-                            </li>
+                                    </div>
+                                </li>
                             }
 
                         </ul>
@@ -255,9 +256,9 @@
                         <div class="flex-wr-s-s m-rl--5">
                             @foreach (var item in tags)
                             {
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                @item.NAME_
-                            </a>
+                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+                                    @item.NAME_
+                                </a>
                             }
                         </div>
                     </div>
