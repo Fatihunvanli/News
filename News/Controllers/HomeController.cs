@@ -9,7 +9,7 @@ namespace News.Controllers
 {
     public class HomeController : Help
     {
-        // GET: Home
+        // GET: Home 
         public ActionResult Index()
         {
             //Eğer sitede yavaşlık olursa tüm haberleri newsten çek burada linq sorgusu at.
