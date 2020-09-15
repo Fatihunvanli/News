@@ -885,8 +885,9 @@
                         <div class="flex-wr-s-s m-rl--5">
                             @foreach (var tag in tags)
                             {
-                                <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                    @tag.NAME_
+                                 { strUrl = "/haberler/" +  RootController.ToUrl((string)tag.tagname) + "/" + tag.tagid; }
+                                <a href="@strUrl" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+                                    @tag.tagname
                                 </a>
                             }
 

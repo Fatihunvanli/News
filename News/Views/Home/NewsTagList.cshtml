@@ -1,30 +1,31 @@
 ﻿@using News.Controllers
 @using System.Linq
 @{
-    ViewBag.Title = "NewsCategoryList";
+    ViewBag.Title = "NewsTagList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var categories = ViewBag.categories as IEnumerable<dynamic>;
-    var categoryName = ViewBag.categoryName;
+    var tagnews = ViewBag.tagnews as IEnumerable<dynamic>;
+    var tagname = ViewBag.tagname;
     var popularNews = ViewBag.popularNews;
     var tags = ViewBag.tags;
 
 }
 
+
 <!-- Breadcrumb -->
 <div class="container">
     <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
         <div class="f2-s-1 p-r-30 m-tb-6">
-            <a href="index.html" class="breadcrumb-item f1-s-3 cl9">
+            <a href="/Home/Index" class="breadcrumb-item f1-s-3 cl9">
                 Home
             </a>
 
-            <a href="category-02.html" class="breadcrumb-item f1-s-3 cl9">
-                Category
+            <a href="#" class="breadcrumb-item f1-s-3 cl9">
+                Etiketler
             </a>
 
             <span class="breadcrumb-item f1-s-3 cl9">
-                @categoryName
+                @tagname
             </span>
         </div>
 
@@ -40,7 +41,7 @@
 <!-- Page heading -->
 <div class="container p-t-4 p-b-40">
     <h2 class="f1-l-1 cl2">
-        @categoryName.ToUpper()
+        @tagname.ToUpper()
     </h2>
 </div>
 
@@ -165,7 +166,7 @@
             <div class="col-md-10 col-lg-8 p-b-80">
                 <div class="row">
 
-                    @foreach (var item in categories)
+                    @foreach (var item in tagnews)
                     {
                         string strUrl = "/haberler/" + item.categoryname + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
                         <div class="col-sm-6 p-r-25 p-r-15-sr991">
@@ -183,7 +184,7 @@
 
                                     <span class="cl8">
                                         <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-                                            @item.NAME_
+                                            @item.categoryname
                                         </a>
 
                                         <span class="f1-s-3 m-rl-3">
@@ -280,3 +281,4 @@
         </div>
     </div>
 </section>
+

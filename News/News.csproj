@@ -243,6 +243,7 @@
     <Content Include="Views\Home\NewsDetail.cshtml" />
     <Content Include="Views\Partials\Footers.cshtml" />
     <Content Include="Views\Home\NewsCategoryList.cshtml" />
+    <Content Include="Views\Home\NewsTagList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

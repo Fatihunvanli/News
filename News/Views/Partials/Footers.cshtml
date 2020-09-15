@@ -60,7 +60,7 @@
                     <ul>
                         @foreach (var item in popularNews)
                         {
-                             string strUrl = "haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
+                             string strUrl = "/haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
                         <li class="flex-wr-sb-s p-b-20">
                             <a href='@strUrl' class="size-w-4 wrap-pic-w hov1 trans-03">
                                 <img src="~/images/@item.SMALLIMAGE" alt="IMG">

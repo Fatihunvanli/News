@@ -15,6 +15,8 @@ namespace News
 
             routes.MapRoute("NewsDetail", "haberler/{categoryname}/{newsname}/{newsid}", new { controller = "Home", action = "NewsDetail" });
 
+            routes.MapRoute("NewsTagList", "haberler/{tagname}/{tagid}", new { controller= "Home", action = "NewsTagList"});
+
             routes.MapRoute("NewsCategoryList", "haberler/{categoryname}", new { controller = "Home", action = "NewsCategoryList" });
 
             //En alt kısımda olacak (Routing doğru bir biçimde çalışması için)
