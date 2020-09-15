@@ -57,170 +57,239 @@
                     <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-460px, 0px, 0px);">
                         <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="9" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[10].TITLE">
-                                    <div class="v-image"><figure style="position: relative;">
-                                        <div style="padding-top: 56.27%;"></div>
-                                        <picture data-iesrc="~/images/@sliderNews[10].SMALLIMAGE" data-alt="@sliderNews[10].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="@sliderNews[10].SMALLIMAGE">
-                                       </picture></figure></div>
+                                @{string strUrl = "/haberler/" + sliderNews[10].CategoryName + "/" + RootController.ToUrl((string)sliderNews[10].TITLE) + "/" + sliderNews[10].ID; }
+                                <a href="@strUrl" title="@sliderNews[10].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[10].SMALLIMAGE" data-alt="@sliderNews[10].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="@sliderNews[10].SMALLIMAGE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[10].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[10].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[10].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[10].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[0].TITLE">
-                                    <div class="v-image"><figure style="position: relative;">
-                                        <div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[0].SMALLIMAGE" data-alt="@sliderNews[0].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[0].SMALLIMAGE">
-                                        <!----><img alt="@sliderNews[0].TITLE"></picture>
-                                         </figure></div> <h2>@sliderNews[0].TITLE</h2>
+                                @{ strUrl = "/haberler/" + sliderNews[0].CategoryName + "/" + RootController.ToUrl((string)sliderNews[0].TITLE) + "/" + sliderNews[0].ID; }
+                                <a href="@strUrl" title="@sliderNews[0].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[0].SMALLIMAGE" data-alt="@sliderNews[0].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[0].SMALLIMAGE">
+                                                <!---->
+                                                <img alt="@sliderNews[0].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div> <h2>@sliderNews[0].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[0].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[0].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[0].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[1].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[1].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[1].SMALLIMAGE">
-                                        <img alt="@sliderNews[1].TITLE"></picture></figure></div>
+                                @{ strUrl = "/haberler/" + sliderNews[1].CategoryName + "/" + RootController.ToUrl((string)sliderNews[1].TITLE) + "/" + sliderNews[1].ID; }
+                                <a href="@strUrl" title="@sliderNews[1].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[1].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[1].SMALLIMAGE">
+                                                <img alt="@sliderNews[1].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[1].TITLE</h2>
                                 </a>
-                                <a href="" title=@sliderNews[1].TITLE" class="category">
+                                <a href="@strUrl" title=@sliderNews[1].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[1].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="2" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[2].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[2].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[2].SMALLIMAGE">
-                                        <img alt="@sliderNews[2].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[2].CategoryName + "/" + RootController.ToUrl((string)sliderNews[2].TITLE) + "/" + sliderNews[2].ID; }
+                                <a href="@strUrl" title="@sliderNews[2].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[1].SMALLIMAGE" data-alt="@sliderNews[2].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[2].SMALLIMAGE">
+                                                <img alt="@sliderNews[2].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[2].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[2].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[2].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[2].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="3" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[3].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[3].SMALLIMAGE" data-alt="@sliderNews[3].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[3].SMALLIMAGE">
-                                        <img alt="@sliderNews[3].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[3].CategoryName + "/" + RootController.ToUrl((string)sliderNews[3].TITLE) + "/" + sliderNews[3].ID; }
+                                <a href="@strUrl" title="@sliderNews[3].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[3].SMALLIMAGE" data-alt="@sliderNews[3].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[3].SMALLIMAGE">
+                                                <img alt="@sliderNews[3].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[3].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[3].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[3].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[3].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="4" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[4].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[4].SMALLIMAGE" data-alt="@sliderNews[4].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[4].SMALLIMAGE">
-                                        <img alt="@sliderNews[4].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[4].CategoryName + "/" + RootController.ToUrl((string)sliderNews[4].TITLE) + "/" + sliderNews[4].ID; }
+                                <a href="@strUrl" title="@sliderNews[4].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[4].SMALLIMAGE" data-alt="@sliderNews[4].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[4].SMALLIMAGE">
+                                                <img alt="@sliderNews[4].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[4].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[4].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[4].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[4].NAME_</h5>
                                 </a>
                             </article>
                         </div> 
                         <div class="swiper-slide" data-swiper-slide-index="5" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[5].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[5].SMALLIMAGE" data-alt="@sliderNews[5].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[5].SMALLIMAGE">
-                                        <img alt="@sliderNews[5].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[5].CategoryName + "/" + RootController.ToUrl((string)sliderNews[5].TITLE) + "/" + sliderNews[5].ID; }
+                                <a href="@strUrl" title="@sliderNews[5].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[5].SMALLIMAGE" data-alt="@sliderNews[5].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[5].SMALLIMAGE">
+                                                <img alt="@sliderNews[5].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[5].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[5].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[5].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[5].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="6" style="width: 460px;">
+                            @{ strUrl = "/haberler/" + sliderNews[6].CategoryName + "/" + RootController.ToUrl((string)sliderNews[6].TITLE) + "/" + sliderNews[6].ID; }
                             <article class="box-2">
-                                <a href="" title="@sliderNews[6].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[6].SMALLIMAGE" data-alt="@sliderNews[6].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[6].SMALLIMAGE">
-                                        <img alt="@sliderNews[6].TITLE"></picture></figure></div>
+                                <a href="@strUrl" title="@sliderNews[6].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[6].SMALLIMAGE" data-alt="@sliderNews[6].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[6].SMALLIMAGE">
+                                                <img alt="@sliderNews[6].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[6].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[6].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[6].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[6].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="7" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[7].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[7].SMALLIMAGE" data-alt="@sliderNews[7].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[7].SMALLIMAGE"> 
-                                        <img alt="@sliderNews[7].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[7].CategoryName + "/" + RootController.ToUrl((string)sliderNews[7].TITLE) + "/" + sliderNews[7].ID; }
+                                <a href="@strUrl" title="@sliderNews[7].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[7].SMALLIMAGE" data-alt="@sliderNews[7].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[7].SMALLIMAGE">
+                                                <img alt="@sliderNews[7].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[7].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[7].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[7].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[7].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-slide-index="8" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[8].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[8].SMALLIMAGE" data-alt="@sliderNews[8].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[8].SMALLIMAGE">
-                                        <img alt="@sliderNews[8].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[8].CategoryName + "/" + RootController.ToUrl((string)sliderNews[8].TITLE) + "/" + sliderNews[8].ID; }
+                                <a href="@strUrl" title="@sliderNews[8].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[8].SMALLIMAGE" data-alt="@sliderNews[8].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[8].SMALLIMAGE">
+                                                <img alt="@sliderNews[8].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[8].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[8].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[8].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[8].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="9" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[9].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[9].SMALLIMAGE" data-alt="@sliderNews[9].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[9].SMALLIMAGE">
-                                        <img alt="@sliderNews[9].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[9].CategoryName + "/" + RootController.ToUrl((string)sliderNews[9].TITLE) + "/" + sliderNews[9].ID; }
+                                <a href="@strUrl" title="@sliderNews[9].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[9].SMALLIMAGE" data-alt="@sliderNews[9].TITLE" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[9].SMALLIMAGE">
+                                                <img alt="@sliderNews[9].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[9].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[9].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[9].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[9].NAME_</h5>
                                 </a>
                             </article>
                         </div>
                         <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 460px;">
                             <article class="box-2">
-                                <a href="" title="@sliderNews[11].TITLE">
-                                    <div class="v-image"><figure style="position: relative;"><div style="padding-top: 56.27%;"></div> 
-                                        <picture data-iesrc="~/images/@sliderNews[11].SMALLIMAGE" data-alt="@sliderNews[11].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
-                                        <source srcset="~/images/@sliderNews[11].SMALLIMAGE">
-                                        <img alt="@sliderNews[11].TITLE"></picture></figure></div> 
+                                @{ strUrl = "/haberler/" + sliderNews[11].CategoryName + "/" + RootController.ToUrl((string)sliderNews[11].TITLE) + "/" + sliderNews[11].ID; }
+                                <a href="@strUrl" title="@sliderNews[11].TITLE">
+                                    <div class="v-image">
+                                        <figure style="position: relative;">
+                                            <div style="padding-top: 56.27%;"></div>
+                                            <picture data-iesrc="~/images/@sliderNews[11].SMALLIMAGE" data-alt="@sliderNews[11].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                                <source srcset="~/images/@sliderNews[11].SMALLIMAGE">
+                                                <img alt="@sliderNews[11].TITLE">
+                                            </picture>
+                                        </figure>
+                                    </div>
                                     <h2>@sliderNews[11].TITLE</h2>
                                 </a>
-                                <a href="" title="@sliderNews[11].TITLE" class="category">
+                                <a href="@strUrl" title="@sliderNews[11].TITLE" class="category">
                                     <h5 class="badge badge-warning">@sliderNews[11].NAME_</h5>
                                 </a>
                             </article>
@@ -239,19 +308,39 @@
                 </div>
                 <div class="sub-headline">
                     <article class="box-2">
-                        <a href="https://www.teknolojioku.com/mobil/sony-xperia-5-ii-icin-detaylar-gelmeye-basladi-5f496c77dccec8201569652c" title="Sony Xperia 5 II için detaylar gelmeye başladı!">
-                            <div class="v-image"><figure style="position: relative;"><div style="padding-top: 59.95%;"></div> <picture data-iesrc="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg" data-alt="Sony Xperia 5 II için detaylar gelmeye başladı!" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"><source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg.webp" type="image/webp"> <source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/sony-xperia-5-ii-icin-detaylar-gelm-zGJD_cover.jpg"> <!----><img alt="Sony Xperia 5 II için detaylar gelmeye başladı!"></picture></figure></div> <h2>Sony Xperia 5 II için detaylar gelmeye başladı!</h2>
+                        @{ strUrl = "/haberler/" + sliderNews[10].CategoryName + "/" + RootController.ToUrl((string)sliderNews[10].TITLE) + "/" + sliderNews[10].ID; }
+                        <a href="@strUrl" title="@sliderNews[10].TITLE">
+                            <div class="v-image">
+                                <figure style="position: relative;">
+                                    <div style="padding-top: 59.95%;"></div>
+                                    <picture data-iesrc="~/images/@sliderNews[10].SMALLIMAGE" data-alt="@sliderNews[10].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[10].SMALLIMAGE"> <!---->
+                                        <img alt="@sliderNews[10].TITLE">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <h2>@sliderNews[10].TITLE</h2>
                         </a>
-                        <a href="https://www.teknolojioku.com/mobil" title="Mobil" class="category">
-                            <h5 class="badge badge-warning">Mobil</h5>
+                        <a href="@strUrl" title="@sliderNews[10].TITLE" class="category">
+                            <h5 class="badge badge-warning">@sliderNews[10].NAME_</h5>
                         </a>
                     </article>
                     <article class="box-2">
-                        <a href="https://www.teknolojioku.com/otomobil/skoda-scala-turkiyede-satisa-sunuldu-iste-fiyati-ve-ozellikleri-5f4966111136eb0a62520df1" title="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;">
-                            <div class="v-image"><figure style="position: relative;"><div style="padding-top: 59.95%;"></div> <picture data-iesrc="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg" data-alt="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;"><source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg.webp" type="image/webp"> <source srcset="https://i.teknolojioku.com/2/310/186/storage/files/images/2020/08/28/skoda-scala-turkiyede-satisa-sunul-jFuj_cover.jpg"> <!----><img alt="Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;"></picture></figure></div> <h2>Skoda Scala Türkiye'de satışa sunuldu! İşte fiyatı ve özellikleri;</h2>
+                        @{ strUrl = "/haberler/" + sliderNews[11].CategoryName + "/" + RootController.ToUrl((string)sliderNews[11].TITLE) + "/" + sliderNews[11].ID; }
+                        <a href="@strUrl" title="@sliderNews[11].TITLE">
+                            <div class="v-image">
+                                <figure style="position: relative;">
+                                    <div style="padding-top: 59.95%;"></div>
+                                    <picture data-iesrc="~/images/@sliderNews[11].SMALLIMAGE" data-alt="@sliderNews[11].TITLE" data-loaded="true" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+                                        <source srcset="~/images/@sliderNews[11].SMALLIMAGE"> <!---->
+                                        <img alt="@sliderNews[11].TITLE">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <h2>@sliderNews[11].TITLE</h2>
                         </a>
-                        <a href="https://www.teknolojioku.com/otomobil" title="Otomobil" class="category">
-                            <h5 class="badge badge-warning">Otomobil</h5>
+                        <a href="@strUrl" title="@sliderNews[11].TITLE" class="category">
+                            <h5 class="badge badge-warning">@sliderNews[11].NAME_</h5>
                         </a>
                     </article>
                 </div>
@@ -279,7 +368,7 @@
                             </ul>
 
                             <!--  -->
-                            @{string strUrl = "/haberler/" + RootController.ToUrl((string)googlefirstitem.CategoryName);}
+                            @{ strUrl = "/haberler/" + RootController.ToUrl((string)googlefirstitem.CategoryName);}
                             <a href="@strUrl" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
                                 Hepsini Göster
                                 <i class="fs-12 m-l-5 fa fa-caret-right"></i>

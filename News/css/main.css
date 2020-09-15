@@ -595,7 +595,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
   flex-wrap: wrap;
   /*position: absolute;*/
   top: 100%;
-  left: 0;
+  /*left: 0;*/
   background-color: #fff;
   /*width: 100%;*/
   display: none;
