@@ -87,9 +87,9 @@
                             <span class="f1-s-12 cl5 m-r-8">
                                 <b>Etiketler:</b>
                             </span>
-
+                            @{string strUrl = "/haberler/" + RootController.ToUrl((string)news.NAME_) + "/" + news.id; }
                             <div class="flex-wr-s-s size-w-0">
-                                <a href="#" class="f1-s-12 cl8 hov-link1 m-r-15">
+                                <a href="@strUrl" class="f1-s-12 cl8 hov-link1 m-r-15">
                                     @news.NAME_
                                 </a>
                             </div>
@@ -166,8 +166,9 @@
                         <ul class="p-t-35">
                             @foreach (var item in categories)
                             {
+                                 strUrl = "/haberler/" + RootController.ToUrl((string)item.NAME_);
                             <li class="how-bor3 p-rl-4">
-                                <a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+                                <a href="@strUrl" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
                                     @item.NAME_
                                 </a>
                             </li>
@@ -205,7 +206,7 @@
                     <div class="p-b-30">
                         <div class="how2 how2-cl4 flex-s-c">
                             <h3 class="f1-m-2 cl3 tab01-title">
-                                Popular Post
+                                Popüler Haberler
                             </h3>
                         </div>
 
@@ -213,7 +214,7 @@
                             
                             @foreach (var item in popularNews)
                             {
-                                string strUrl = "/haberler/" + item.categoryname + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
+                                 strUrl = "/haberler/" + item.categoryname + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;
                             <li class="flex-wr-sb-s p-b-30">
                                 <a href="@strUrl" class="size-w-10 wrap-pic-w hov1 trans-03">
                                     <img src="~/images/@item.SMALLIMAGE" alt="IMG">
@@ -257,7 +258,7 @@
                         <div class="flex-wr-s-s m-rl--5">
                             @foreach (var tag in tags)
                             {
-                                string strUrl = "/haberler/" + RootController.ToUrl((string)tag.tagname) + "/" + tag.tagid;
+                                 strUrl = "/haberler/" + RootController.ToUrl((string)tag.tagname) + "/" + tag.tagid;
                             <a href="@strUrl" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 @tag.tagname
                             </a>

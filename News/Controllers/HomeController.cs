@@ -83,7 +83,7 @@ namespace News.Controllers
             var categories = db.Query("Select c.NAME_ from CATEGORIES c inner join NEWS n on c.ID = n.CATEGORYID group by c.NAME_");
             var tags = db.Query("select NAME_ tagname, ID tagid from TAGS ");
 
-            var news = db.Query("SELECT n.ID,n.TITLE,n.CONTENT_,c.NAME_ as CATEGORYNAME,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.NAME_ FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS nf on nt.TAGSID = nf.ID inner join CATEGORIES c on c.ID = n.CATEGORYID where n.ID = '" + newsid + "' ").FirstOrDefault();
+            var news = db.Query("SELECT n.ID,n.TITLE,n.CONTENT_,c.NAME_ as CATEGORYNAME,n.AUTHOR,Convert(varchar,n.CREATEDATE,103) CREATEDATE,n.READTIME,n.VIEWS_,ni.SMALLIMAGE SMALLIMAGE,nf.ID id, nf.NAME_ FROM NEWS n inner join NEWSIMAGES ni on n.ID = ni.NEWSID inner join NEWSTAGS nt on n.ID = nt.NEWSID inner join TAGS nf on nt.TAGSID = nf.ID inner join CATEGORIES c on c.ID = n.CATEGORYID where n.ID = '" + newsid + "' ").FirstOrDefault();
 
             var popularNews = db.Query("SELECT TOP 3 n.ID,n.TITLE,Convert(varchar,n.CREATEDATE,103) CREATEDATE,ni.SMALLIMAGE SMALLIMAGE,c.NAME_ categoryname FROM NEWS n " +
                 "inner join NEWSIMAGES ni on ni.NEWSID = n.ID inner join CATEGORIES c on n.CATEGORYID = c.ID order by VIEWS_ desc");
