@@ -29,41 +29,9 @@
 
     <link href="~/css/main.css" rel="stylesheet" />
 
-
+    <link href="~/css/my.css" rel="stylesheet" />
     <!-- Slider için arka plan rengi için burası düzenlenecek -->
     <link href="~/css/app.min.css" rel="stylesheet" />
-
-    <style>
-        .removeMark::after {
-            content: none !important;
-        }
-        @*mobilde bozuluyor responsive ayarla @media RESPONSİV DEĞİL*@
-        .customsize {
-            object-fit: cover;
-            max-width: 320px;
-            max-height: 180px;
-        }
-
-        .customsizefirst {
-            object-fit: cover;
-            max-width: 320px;
-            max-height: 240px;
-        }
-
-        .customsizesmallimage {
-            object-fit: cover;
-            max-width: 100px;
-            max-height: 75px;
-        }
-
-        .customsizefooter {
-            object-fit: cover;
-            max-width: 80px;
-            max-height: 60px;
-        }
-
-
-    </style>
 
 </head>
 <body class="animsition">
@@ -75,12 +43,12 @@
             <div class="topbar">
                 <div class="content-topbar container h-100">
                     <div class="left-topbar">
-                       
-                      @*Kur bilgisi gelecek*@
+
+                        @*Döviz kuru gelecek.*@
 
                     </div>
 
-                    <div class="right-topbar">
+                    @*<div class="right-topbar">
                         <a href="#">
                             <span class="fab fa-facebook-f"></span>
                         </a>
@@ -100,7 +68,7 @@
                         <a href="#">
                             <span class="fab fa-youtube"></span>
                         </a>
-                    </div>
+                    </div>*@
                 </div>
             </div>
 
@@ -326,7 +294,7 @@
 
 <script src="~/vendor/animsition/js/animsition.min.js"></script>
 
-<script src="~/vendor/bootstrap/js/popper.js"></script>
+<script src="~/vendor/bootstrap/js/popper.min.js"></script>
 
 <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -345,7 +313,6 @@
     }
 </script>
 
-
 <script src="~/js/slider.js"></script>
 <script src="~/js/refresh.js"></script>
 <span id="scriptload" style="display:none"></span>
@@ -355,5 +322,7 @@
         refresh.start();
     });
 </script>
+
+
 
 

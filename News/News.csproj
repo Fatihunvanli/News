@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="css\app.min.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\my.css" />
     <Content Include="css\util.css" />
     <Content Include="css\util.min.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
