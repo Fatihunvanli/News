@@ -29,6 +29,7 @@
 
     <link href="~/css/main.css" rel="stylesheet" />
 
+
     <!-- Slider için arka plan rengi için burası düzenlenecek -->
     <link href="~/css/app.min.css" rel="stylesheet" />
 
@@ -74,33 +75,9 @@
             <div class="topbar">
                 <div class="content-topbar container h-100">
                     <div class="left-topbar">
-                        <span class="left-topbar-item flex-wr-s-c">
-                            <span>
-                                New York, NY
-                            </span>
+                       
+                      @*Kur bilgisi gelecek*@
 
-                            <img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
-
-                            <span>
-                                HI 58° LO 56°
-                            </span>
-                        </span>
-
-                        <a href="#" class="left-topbar-item">
-                            About
-                        </a>
-
-                        <a href="#" class="left-topbar-item">
-                            Contact
-                        </a>
-
-                        <a href="#" class="left-topbar-item">
-                            Sing up
-                        </a>
-
-                        <a href="#" class="left-topbar-item">
-                            Log in
-                        </a>
                     </div>
 
                     <div class="right-topbar">
@@ -202,24 +179,24 @@
 
                 <ul class="main-menu-m">
                     <li>
-                        <a href="index.html">Google</a>
+                        <a href="/haberler/google">Google</a>
                     </li>
 
                     <li>
-                        <a href="category-01.html">Microsoft</a>
+                        <a href="/haberler/microsoft">Microsoft</a>
                     </li>
 
                     <li>
-                        <a href="category-02.html">Oyun</a>
+                        <a href="/haberler/oyun">Oyun</a>
                     </li>
 
                     <li>
-                        <a href="category-01.html">Mobil</a>
+                        <a href="#">Mobil</a>
                         <ul class="sub-menu-m">
-                            <li><a href="category-01.html">Apple</a></li>
-                            <li><a href="category-02.html">Samsung</a></li>
-                            <li><a href="blog-grid.html">Xiaomi</a></li>
-                            <li><a href="blog-list-01.html">Huawei</a></li>
+                            <li><a href="/haberler/apple">Apple</a></li>
+                            <li><a href="/haberler/samsung">Samsung</a></li>
+                            <li><a href="/haberler/xiaomi">Xiaomi</a></li>
+                            <li><a href="/haberler/huawei">Huawei</a></li>
                         </ul>
 
                         <span class="arrow-main-menu-m">
@@ -228,18 +205,18 @@
                     </li>
 
                     <li>
-                        <a href="category-02.html">Yapay Zeka</a>
+                        <a href="/haberler/yapayzeka">Yapay Zeka</a>
                     </li>
 
                     <li>
-                        <a href="category-01.html">Giyilebilir Teknoloji</a>
+                        <a href="/haberler/giyilebilirteknoloji">Giyilebilir Teknoloji</a>
                     </li>
 
                     <li>
-                        <a href="category-02.html">Mobil İşletim Sistemleri</a>
+                        <a href="#">Mobil İşletim Sistemleri</a>
                         <ul class="sub-menu-m">
-                            <li><a href="category-01.html">IOS</a></li>
-                            <li><a href="category-02.html">Android</a></li>
+                            <li><a href="/haberler/ıos">IOS</a></li>
+                            <li><a href="/haberler/android">Android</a></li>
                         </ul>
 
                         <span class="arrow-main-menu-m">
@@ -248,7 +225,7 @@
                     </li>
 
                     <li>
-                        <a href="#">Netflix</a>
+                        <a href="/haberler/netflix">Netflix</a>
                     </li>
                 </ul>
             </div>
@@ -293,14 +270,14 @@
                             </li>
 
                             <li class="mega-menu-item">
-                                <a href="category-01.html">Mobil</a>
+                                <a href="#">Mobil</a>
 
                                 <div class="sub-mega-menu">
                                     <div class="nav flex-column nav-pills" role="tablist">
-                                        <a class="nav-link active" data-toggle="pill" href="#business-1" role="tab">Apple</a>
-                                        <a class="nav-link" data-toggle="pill" href="#business-2" role="tab">Samsung</a>
-                                        <a class="nav-link" data-toggle="pill" href="#business-2" role="tab">Xiaomi</a>
-                                        <a class="nav-link" data-toggle="pill" href="#business-2" role="tab">Huawei</a>
+                                        <a class="nav-link active" href="/haberler/apple" role="tab">Apple</a>
+                                        <a class="nav-link" href="/haberler/samsung" role="tab">Samsung</a>
+                                        <a class="nav-link" href="/haberler/xiaomi" role="tab">Xiaomi</a>
+                                        <a class="nav-link" href="/haberler/huawei" role="tab">Huawei</a>
                                     </div>
                                 </div>
                             </li>
@@ -314,12 +291,12 @@
                             </li>
 
                             <li class="mega-menu-item">
-                                <a href="category-02.html">Mobil İşletim Sistemleri</a>
+                                <a href="#">Mobil İşletim Sistemleri</a>
 
                                 <div class="sub-mega-menu">
                                     <div class="nav flex-column nav-pills" role="tablist">
-                                        <a class="nav-link active" data-toggle="pill" href="#video-1" role="tab">IOS</a>
-                                        <a class="nav-link" data-toggle="pill" href="#video-1" role="tab">Android</a>
+                                        <a class="nav-link active" href="/haberler/ıos" role="tab">IOS</a>
+                                        <a class="nav-link" href="/haberler/android" role="tab">Android</a>
                                     </div>
                                 </div>
                             </li>
@@ -375,6 +352,8 @@
 <script defer="defer" src="~/js/app.js"></script>
 <script>
     document.getElementById("scriptload").addEventListener("DOMNodeInserted", function () {
-            refresh.start();
+        refresh.start();
     });
 </script>
+
+
