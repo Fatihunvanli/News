@@ -14,11 +14,12 @@
 <div class="container">
     <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
         <div class="f2-s-1 p-r-30 m-tb-6">
-            <a href="Home/Index" class="breadcrumb-item f1-s-3 cl9">
+            <a href="/Home/Index" class="breadcrumb-item f1-s-3 cl9">
                 Anasayfa
             </a>
 
-            <a href="" class="breadcrumb-item f1-s-3 cl9">
+            @{string strUrl1 = "/haberler/" + @news.CATEGORYNAME; }
+            <a href="@strUrl1" class="breadcrumb-item f1-s-3 cl9">
                 @news.CATEGORYNAME
             </a>
 
@@ -33,6 +34,9 @@
                 <i class="zmdi zmdi-search"></i>
             </button>
         </div>
+
+        <div align="center">
+        <script language="Javascript" src="http://sa.sayaclar.com/c/s4.php?a=4ej56xl&s=1a7"></script></div>
     </div>
 </div>
 
@@ -229,7 +233,7 @@
 
                                     <span class="cl8 txt-center p-b-24">
                                         <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-                                            @item.NAME_
+                                            @item.categoryname
                                         </a>
 
                                         <span class="f1-s-3 m-rl-3">
@@ -238,6 +242,14 @@
 
                                         <span class="f1-s-3">
                                             @item.CREATEDATE
+                                        </span>
+
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
+
+                                        <span class="f1-s-3">
+                                            @item.AUTHOR
                                         </span>
                                     </span>
                                 </div>
