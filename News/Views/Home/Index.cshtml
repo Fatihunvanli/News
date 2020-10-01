@@ -13,7 +13,7 @@
 
     var sliderNews = ViewBag.sliderNews as List<dynamic>;
 
-    var googlefirstitem = google.First();  
+    var googlefirstitem = google.First();
 
     var microsoftfirtsitem = microsoft.First();
 
@@ -22,7 +22,7 @@
 }
 
 
-    
+
 <!-- Headline -->
 <div class="container">
     <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
@@ -176,7 +176,7 @@
                                     <h5 class="badge badge-warning">@sliderNews[4].NAME_</h5>
                                 </a>
                             </article>
-                        </div> 
+                        </div>
                         <div class="swiper-slide" data-swiper-slide-index="5" style="width: 460px;">
                             <article class="box-2">
                                 @{ strUrl = "/haberler/" + sliderNews[5].CategoryName + "/" + RootController.ToUrl((string)sliderNews[5].TITLE) + "/" + sliderNews[5].ID; }
@@ -299,17 +299,28 @@
                         </div>
                     </div>
                     <div class="swiper-pagination swiper-pagination-bullets">
-                    <a href="https://www.teknolojioku.com/donanim/mediatek-huaweiye-islemci-satmak-icin-abdden-izin-istedi-5f4a9f6f5a098f4dc11f1370" class="num">
-                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active">1</span></a><a href="https://www.teknolojioku.com/egitim/okullar-21-eylulde-acilacak-mi-milli-egitim-bakani-acikladi-5f4b680cee270c5144173f46" class="num">
-                        <span class="swiper-pagination-bullet">2</span></a><a href="https://www.teknolojioku.com/mobil/harmonyos-kullanan-ilk-telefon-ne-zaman-gelecek-huawei-acikladi-5f4b5af713a98f66bc2abb0f" class="num">
-                        <span class="swiper-pagination-bullet">3</span></a><a href="https://www.teknolojioku.com/mobil/uygun-fiyatli-nokia-34-ozellikleri-sizdirildi-5f4b492002bbd900c9005939" class="num">
-                        <span class="swiper-pagination-bullet">4</span></a><a href="https://www.teknolojioku.com/otomobil/son-zamlarin-ardindan-2020-volkswagen-tiguan-fiyat-listesi-5f4b3e8cff872c72b214c4ea" class="num">
-                        <span class="swiper-pagination-bullet">5</span></a><a href="https://www.teknolojioku.com/otomobil/sifir-otomobile-otv-indirimi-beklerken-otv-zammi-geldi-5f4b33dfee270c5144173f3a" class="num">
-                        <span class="swiper-pagination-bullet">6</span></a><a href="https://www.teknolojioku.com/bilim-teknik/issde-yasayacak-ilk-siyahi-kadin-olacak-5f4a950b38312239a52e17de" class="num">
-                        <span class="swiper-pagination-bullet">7</span></a><a href="https://www.teknolojioku.com/sinema/netflixte-yer-alan-en-iyi-bilim-kurgu-filmleri-agustos-2020-5f494778b880087adb6c78a0" class="num">
-                        <span class="swiper-pagination-bullet">8</span></a><a href="https://www.teknolojioku.com/mobil/en-ucuz-samsung-modelleri-agustos-2020-5f4957da9b20d976a5612cdb" class="num">
-                        <span class="swiper-pagination-bullet">9</span></a><a href="https://www.teknolojioku.com/mobil/oppo-uzayabilen-ekrana-sahip-telefon-uzerinde-calisiyor-5f497be4ff872c72b214c4d6" class="num">
-                        <span class="swiper-pagination-bullet">10</span></a></div>
+                        <a href="https://www.teknolojioku.com/donanim/mediatek-huaweiye-islemci-satmak-icin-abdden-izin-istedi-5f4a9f6f5a098f4dc11f1370" class="num">
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active">1</span>
+                        </a><a href="https://www.teknolojioku.com/egitim/okullar-21-eylulde-acilacak-mi-milli-egitim-bakani-acikladi-5f4b680cee270c5144173f46" class="num">
+                            <span class="swiper-pagination-bullet">2</span>
+                        </a><a href="https://www.teknolojioku.com/mobil/harmonyos-kullanan-ilk-telefon-ne-zaman-gelecek-huawei-acikladi-5f4b5af713a98f66bc2abb0f" class="num">
+                            <span class="swiper-pagination-bullet">3</span>
+                        </a><a href="https://www.teknolojioku.com/mobil/uygun-fiyatli-nokia-34-ozellikleri-sizdirildi-5f4b492002bbd900c9005939" class="num">
+                            <span class="swiper-pagination-bullet">4</span>
+                        </a><a href="https://www.teknolojioku.com/otomobil/son-zamlarin-ardindan-2020-volkswagen-tiguan-fiyat-listesi-5f4b3e8cff872c72b214c4ea" class="num">
+                            <span class="swiper-pagination-bullet">5</span>
+                        </a><a href="https://www.teknolojioku.com/otomobil/sifir-otomobile-otv-indirimi-beklerken-otv-zammi-geldi-5f4b33dfee270c5144173f3a" class="num">
+                            <span class="swiper-pagination-bullet">6</span>
+                        </a><a href="https://www.teknolojioku.com/bilim-teknik/issde-yasayacak-ilk-siyahi-kadin-olacak-5f4a950b38312239a52e17de" class="num">
+                            <span class="swiper-pagination-bullet">7</span>
+                        </a><a href="https://www.teknolojioku.com/sinema/netflixte-yer-alan-en-iyi-bilim-kurgu-filmleri-agustos-2020-5f494778b880087adb6c78a0" class="num">
+                            <span class="swiper-pagination-bullet">8</span>
+                        </a><a href="https://www.teknolojioku.com/mobil/en-ucuz-samsung-modelleri-agustos-2020-5f4957da9b20d976a5612cdb" class="num">
+                            <span class="swiper-pagination-bullet">9</span>
+                        </a><a href="https://www.teknolojioku.com/mobil/oppo-uzayabilen-ekrana-sahip-telefon-uzerinde-calisiyor-5f497be4ff872c72b214c4d6" class="num">
+                            <span class="swiper-pagination-bullet">10</span>
+                        </a>
+                    </div>
                 </div>
                 <ins class="prev"><i class="icon-navigate_before"></i></ins>
                 <ins class="next"><i class="icon-navigate_next"></i></ins>
@@ -397,8 +408,8 @@
                                 <div class="row">
                                     <div class="col-sm-6 p-r-25 p-r-15-sr991">
                                         <!-- Item post -->
-                                        
-                                        @{ strUrl = "/haberler/" + googlefirstitem.CategoryName + "/" + RootController.ToUrl((string)googlefirstitem.TITLE)+"/"+ googlefirstitem.ID; }
+
+                                        @{ strUrl = "/haberler/" + googlefirstitem.CategoryName + "/" + RootController.ToUrl((string)googlefirstitem.TITLE) + "/" + googlefirstitem.ID; }
                                         <div class="m-b-30">
                                             <a href="@strUrl" class="wrap-pic-w hov1 trans-03">
                                                 <img class="customsizefirst" src="~/images/@googlefirstitem.SMALLIMAGE" alt="IMG">
@@ -411,27 +422,20 @@
                                                     </a>
                                                 </h5>
 
-                                                <span class="cl8">
+                                                <span class="f1-s-3 cl8 m-r-15">
                                                     <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
                                                         @googlefirstitem.NAME_
                                                     </a>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        @googlefirstitem.AUTHOR
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3">
-                                                        @googlefirstitem.CREATEDATE
-                                                    </span>
                                                 </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-edit"></i> @googlefirstitem.AUTHOR
+                                                </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-calendar-alt"></i> @googlefirstitem.CREATEDATE
+                                                </span>
+
                                             </div>
                                         </div>
                                     </div>
@@ -457,27 +461,20 @@
                                                         </a>
                                                     </h5>
 
-                                                    <span class="cl8">
+                                                    <span class="f1-s-3 cl8 m-r-15">
                                                         <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
                                                             @item.NAME_
                                                         </a>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            -
-                                                        </span>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            @item.AUTHOR
-                                                        </span>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            -
-                                                        </span>
-
-                                                        <span class="f1-s-3">
-                                                            @item.CREATEDATE
-                                                        </span>
                                                     </span>
+
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-edit"></i> @item.AUTHOR
+                                                    </span>
+
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-calendar-alt"></i> @item.CREATEDATE
+                                                    </span>
+
                                                 </div>
                                             </div>
                                         }
@@ -529,27 +526,20 @@
                                                     </a>
                                                 </h5>
 
-                                                <span class="cl8">
+                                                <span class="f1-s-3 cl8 m-r-15">
                                                     <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
                                                         @microsoftfirtsitem.NAME_
                                                     </a>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        @microsoftfirtsitem.AUTHOR
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3">
-                                                        @microsoftfirtsitem.CREATEDATE
-                                                    </span>
                                                 </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-edit"></i> @microsoftfirtsitem.AUTHOR
+                                                </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-calendar-alt"></i> @microsoftfirtsitem.CREATEDATE
+                                                </span>
+
                                             </div>
                                         </div>
                                     </div>
@@ -562,7 +552,7 @@
                                             {
                                                 continue;
                                             }
-                                            { strUrl = "/haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID;}
+                                            { strUrl = "/haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID; }
                                             <div class="flex-wr-sb-s m-b-30">
                                                 <a href="@strUrl" class="size-w-1 wrap-pic-w hov1 trans-03">
                                                     <img class="customsizesmallimage" src="~/images/@item.SMALLIMAGE" alt="IMG">
@@ -575,27 +565,20 @@
                                                         </a>
                                                     </h5>
 
-                                                    <span class="cl8">
+                                                    <span class="f1-s-3 cl8 m-r-15">
                                                         <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
                                                             @item.NAME_
                                                         </a>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            -
-                                                        </span>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            @item.AUTHOR
-                                                        </span>
-
-                                                        <span class="f1-s-3 m-rl-3">
-                                                            -
-                                                        </span>
-
-                                                        <span class="f1-s-3">
-                                                            @item.CREATEDATE
-                                                        </span>
                                                     </span>
+
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-edit"></i> @item.AUTHOR
+                                                    </span>
+
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-calendar-alt"></i> @item.CREATEDATE
+                                                    </span>
+
                                                 </div>
                                             </div>
                                         }
@@ -649,27 +632,20 @@
                                                     </a>
                                                 </h5>
 
-                                                <span class="cl8">
+                                                <span class="f1-s-3 cl8 m-r-15">
                                                     <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
                                                         @applefirtsitem.NAME_
                                                     </a>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        @applefirtsitem.AUTHOR
-                                                    </span>
-
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
-                                                    </span>
-
-                                                    <span class="f1-s-3">
-                                                        @applefirtsitem.CREATEDATE
-                                                    </span>
                                                 </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-edit"></i> @applefirtsitem.AUTHOR
+                                                </span>
+
+                                                <span class="f1-s-3 cl8 m-r-15">
+                                                    <i class="fas fa-calendar-alt"></i> @applefirtsitem.CREATEDATE
+                                                </span>
+
                                             </div>
                                         </div>
                                     </div>
@@ -683,41 +659,34 @@
                                                 continue;
                                             }
                                             { strUrl = "/haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID; }
-                                        <div class="flex-wr-sb-s m-b-30">
-                                            <a href="@strUrl" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                                <img class="customsizesmallimage" src="~/images/@item.SMALLIMAGE" alt="IMG">
-                                            </a>
-                                            
-                                            <div class="size-w-2">
-                                                <h5 class="p-b-5">
-                                                    <a href="@strUrl" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                                        @item.TITLE
-                                                    </a>
-                                                </h5>
+                                            <div class="flex-wr-sb-s m-b-30">
+                                                <a href="@strUrl" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                    <img class="customsizesmallimage" src="~/images/@item.SMALLIMAGE" alt="IMG">
+                                                </a>
 
-                                                <span class="cl8">
-                                                    <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-                                                        @item.NAME_
-                                                    </a>
+                                                <div class="size-w-2">
+                                                    <h5 class="p-b-5">
+                                                        <a href="@strUrl" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                            @item.TITLE
+                                                        </a>
+                                                    </h5>
 
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                            @item.NAME_
+                                                        </a>
                                                     </span>
 
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        @item.AUTHOR
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-edit"></i> @item.AUTHOR
                                                     </span>
 
-                                                    <span class="f1-s-3 m-rl-3">
-                                                        -
+                                                    <span class="f1-s-3 cl8 m-r-15">
+                                                        <i class="fas fa-calendar-alt"></i> @item.CREATEDATE
                                                     </span>
 
-                                                    <span class="f1-s-3">
-                                                        @item.CREATEDATE
-                                                    </span>
-                                                </span>
+                                                </div>
                                             </div>
-                                        </div>
                                         }
                                     </div>
                                 </div>
@@ -866,19 +835,16 @@
                                         </a>
                                     </h5>
 
-                                    <span class="cl8">
+                                    <span class="f1-s-3 cl8 m-r-15">
                                         <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-                                            @item.AUTHOR
+                                            <i class="fas fa-edit"></i> @item.AUTHOR
                                         </a>
-
-                                        <span class="f1-s-3 m-rl-3">
-                                            -
-                                        </span>
-
-                                        <span class="f1-s-3">
-                                            @item.CREATEDATE
-                                        </span>
                                     </span>
+
+                                    <span class="f1-s-3 cl8 m-r-15">
+                                        <i class="fas fa-calendar-alt"></i> @item.CREATEDATE
+                                    </span>
+
                                 </div>
                             </div>
                         </div>
@@ -899,7 +865,7 @@
                         <div class="flex-wr-s-s m-rl--5">
                             @foreach (var tag in tags)
                             {
-                                 { strUrl = "/haberler/" +  RootController.ToUrl((string)tag.tagname) + "/" + tag.tagid; }
+                                { strUrl = "/haberler/" + RootController.ToUrl((string)tag.tagname) + "/" + tag.tagid; }
                                 <a href="@strUrl" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                     @tag.tagname
                                 </a>
