@@ -27,15 +27,16 @@
 <div class="container">
     <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
         <div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-            <span class="text-uppercase cl2 p-r-8">
-                Güncel Haberler :
+            <span class="text-uppercase cl2 p-r-8" style="color:red">
+                <strong>Güncel Haberler :</strong>
             </span>
 
             <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
                 @foreach (var item in news)
                 {
+                    string strUrl1 = "/haberler/" + item.CategoryName + "/" + RootController.ToUrl((string)item.TITLE) + "/" + item.ID; 
                     <span class="dis-inline-block slide100-txt-item animated visible-false">
-                        @item.TITLE
+                        <a href="@strUrl1"> @item.TITLE</a>
                     </span>
                 }
             </span>

@@ -1,5 +1,6 @@
 ﻿@using News.Controllers
 @using System.Linq
+@using System.Globalization;
 @{
     ViewBag.Title = "NewsTagList";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,16 +18,17 @@
     <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
         <div class="f2-s-1 p-r-30 m-tb-6">
             <a href="/Home/Index" class="breadcrumb-item f1-s-3 cl9">
-                Home
-            </a>
-
-            <a href="#" class="breadcrumb-item f1-s-3 cl9">
-                Etiketler
+                Anasayfa
             </a>
 
             <span class="breadcrumb-item f1-s-3 cl9">
-                @tagname
+                Etiket
             </span>
+
+            <span class="breadcrumb-item f1-s-3 cl9">
+                @CultureInfo.CurrentCulture.TextInfo.ToTitleCase(tagname)
+            </span>
+
         </div>
 
         <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
@@ -40,9 +42,9 @@
 
 <!-- Page heading -->
 <div class="container p-t-4 p-b-40">
-    <h2 class="f1-l-1 cl2">
+    <h6 class="f1-l-1 cl2">
         @tagname.ToUpper()
-    </h2>
+    </h6>
 </div>
 
 <!-- Feature post -->
